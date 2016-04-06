@@ -55,7 +55,7 @@ subtest "provides a helper to instantiate and run experiments" => sub {
 
 =cut
 
-todo "provides an empty default_scientist_context" => sub {
+subtest "provides an empty default_scientist_context" => sub {
     is $CLASS->new->context, {}, 'context defaults to {}';
 };
 
@@ -84,7 +84,7 @@ todo "provides an empty default_scientist_context" => sub {
 
 =cut
 
-todo "respects default_scientist_context" => sub {
+subtest "respects default_scientist_context" => sub {
     subtest 'refute_nil experiment' => sub {
         like(
             dies { $CLASS->new(experiment => undef) },

@@ -15,6 +15,7 @@ use Types::Standard qw/Bool Str CodeRef HashRef/;
 has 'context' => (
     is       => 'rw',
     isa      => HashRef,
+    builder  => 1,
 );
 
 has 'enabled' => (
@@ -46,6 +47,10 @@ has 'try' => (
 
 sub name {
     return 'experiment';
+}
+
+sub _build_context {
+    return {};
 }
 
 sub publish {
